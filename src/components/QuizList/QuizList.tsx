@@ -1,23 +1,32 @@
-import React, { useId } from 'react'
+import React, { useId }                       from 'react'
 // Components
-import { List } from '@mui/material'
-import { Box }  from '@mui/system'
-import QuizCard from '../QuizCard/QuizCard';
-import Grid     from '@mui/material/Grid';
+import { List }                               from '@mui/material'
+import { Box }                                from '@mui/system'
+import { CardHeader, CardMedia, CardContent } from '@mui/material'
+import Card                                   from '@mui/material/Card';
+import QuizCard                               from '../QuizCard/QuizCard';
+import Grid                                   from '@mui/material/Grid';
 // Data
-import QUIZZES  from '../../data/quizzes';
+import QUIZZES                                from '../../data/quizzes';
+// Style
+import './QuizList.css';
 
 const QuizList = () => {
   return (
-    <Grid container marginTop={2} maxWidth={400} spacing={8} sx={{ maxHeight: 700, overflow: 'auto' }}>
-      {QUIZZES.map(quiz => {
-        return (
-          <Grid key={useId()} item xs={6} sm={6} md={6} lg={12} xl={12}>
-            <QuizCard quiz={quiz}></QuizCard>
-          </Grid>
-        )}
-      )}
-    </Grid>
+    <Card className='QuizList card' sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+      <CardHeader className='text' title={'Quiz List'}></CardHeader>
+      <CardContent>
+        <Grid container maxWidth={800} sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+          {QUIZZES.map(quiz => {
+            return (
+              <Grid key={useId()} item xs={12} sm={12} md={12} lg={6} xl={6} padding={2}>
+                <QuizCard quiz={quiz}></QuizCard>
+              </Grid>
+            )}
+          )}
+        </Grid>
+      </CardContent>
+    </Card>
   )
 }
 

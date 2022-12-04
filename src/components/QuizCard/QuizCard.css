@@ -1,0 +1,10 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.quiz-card {
+  background-color: #4b5e9e !important;
+}

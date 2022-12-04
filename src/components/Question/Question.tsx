@@ -14,9 +14,9 @@ const Question = ({ idx }: { idx: number }) => {
   const { currQuiz }: { currQuiz?: Quizzes } = useContext(AppContext)
 
   return (
-    <ListItem>
+    <ListItem sx={{ paddingX: '2rem' }}>
       <ListItemText>
-        <span>{ (idx + 1 + ' - ') + currQuiz?.questions[idx].question }</span>
+        <span className='text'>{ (idx + 1 + ' - ') + currQuiz?.questions[idx].question }</span>
       </ListItemText>
     </ListItem>
   )

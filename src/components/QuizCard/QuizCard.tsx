@@ -7,6 +7,17 @@ import { Typography }                         from '@mui/material'
 // Data
 import { Quizzes }                            from '../../data'
 import { AppContext }                         from '../../context/AppContext'
+// Styles
+import './QuizCard';
+import '../../index.css';
+
+const selectedQuiz = {
+  backgroundColor: '#1976d2'
+}
+
+const unselectedQuiz = {
+  backgroundColor: '#363636'
+}
 
 const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
 
@@ -15,19 +26,22 @@ const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
   const selectQuiz = () => {
     setCurrQuiz(quiz)
   }
+  const selected: boolean = currQuiz?._id === quiz?._id;
 
   return (
-    <Card sx={{ maxWidth: 345 }} onClick={selectQuiz}>
+    <Card style={{ ...(selected ? selectedQuiz : unselectedQuiz) }} onClick={selectQuiz}>
       <CardActionArea>
-        <CardHeader title={quiz._id}>
+        <CardHeader className='text' title={quiz._id}>
         </CardHeader>
         <CardContent>
-          <Typography gutterBottom variant='h5' component='div'>
+          <Typography className='text' gutterBottom variant='h5' component='div'>
             { `${quiz.questions?.length} questions` }
           </Typography>
         </CardContent>
-        <CardActions sx={{ paddingLeft: '6.5rem' }}>
-          { quiz.category }
+        <CardActions>
+          <div className='category text'>
+            <p>{ quiz.category }</p>
+          </div>
         </CardActions>
       </CardActionArea>
     </Card>

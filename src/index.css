@@ -22,3 +22,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.card {
+  background-color: #242d49 !important;
+}
+
+.text {
+  color: #ffffff;
+}

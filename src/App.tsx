@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div className='App'>
       <Navbar></Navbar>
-      <Container fixed>
+      <Container fixed maxWidth="xl" disableGutters>
         <Home></Home>
       </Container>
     </div>  

@@ -13,10 +13,10 @@ import './QuizList.css';
 
 const QuizList = () => {
   return (
-    <Card className='QuizList card' sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+    <Card className='QuizList card' sx={{ height: '100%' }}>
       <CardHeader className='text' title={'Quiz List'}></CardHeader>
-      <CardContent>
-        <Grid container maxWidth={800} sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+      <CardContent sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+        <Grid container  maxWidth={800}>
           {QUIZZES.map(quiz => {
             return (
               <Grid key={useId()} item xs={12} sm={12} md={12} lg={6} xl={6} padding={2}>

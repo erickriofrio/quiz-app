@@ -16,7 +16,7 @@ const QuizForm = () => {
   const { currQuiz }: { currQuiz?: Quizzes } = useContext(AppContext);
 
   return (
-    <Card className="QuizForm card" sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
+    <Card className="QuizForm card" sx={{ height: '100%', overflow: 'auto' }}>
       <CardHeader className='text' title={currQuiz?._id} titleTypographyProps={{ typography: { variant:'h5', component:'div' } }}></CardHeader>
       <CardContent>
         <Box maxHeight={700} height={'100%'} sx={{ width: '100%' }}>

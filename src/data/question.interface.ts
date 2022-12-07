@@ -1,6 +1,6 @@
 import { TriviaCategory, TriviaDifficulty, TriviaQuestionType } from './trivia-api.enums';
 
-export interface Question {
+export interface QuestionType {
   id?              : string;
   category?        : TriviaCategory;
   correctAnswer?   : string;

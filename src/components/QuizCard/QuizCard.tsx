@@ -5,7 +5,7 @@ import { Card, CardActionArea, CardActions }  from '@mui/material'
 import { CardHeader, CardMedia, CardContent } from '@mui/material'
 import { Typography }                         from '@mui/material'
 // Data
-import { Quizzes }                            from '../../data'
+import { Quizzes, triviaUri }                 from '../../data'
 import { AppContext }                         from '../../context/AppContext'
 // Styles
 import './QuizCard';
@@ -21,9 +21,19 @@ const unselectedQuiz = {
 
 const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
 
-  const { currQuiz, setCurrQuiz } = useContext(AppContext);
+  let quizQuests = [];
+  const { currQuiz, setCurrQuiz }   = useContext(AppContext);
+  const { questions, setQuestions } = useContext(AppContext);
   
   const selectQuiz = () => {
+
+    const { category, limitQuests, difficulty } = quiz;
+    fetch(triviaUri(category, limitQuests, difficulty), { method: 'GET' })
+    .then(async (res) => {
+      const quests = await res.json();
+      setQuestions(quests);
+    })
+    
     setCurrQuiz(quiz)
   }
   const selected: boolean = currQuiz?._id === quiz?._id;
@@ -35,7 +45,7 @@ const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
         </CardHeader>
         <CardContent>
           <Typography className='text' gutterBottom variant='h5' component='div'>
-            { `${quiz.questions?.length} questions` }
+            { `${quizQuests?.length} questions` }
           </Typography>
         </CardContent>
         <CardActions>

@@ -1,5 +1,5 @@
 export enum TriviaCategory {
-  ART_LITERATURE    = 'Arts & Literature',
+  ART_LITERATURE    = 'Arts And Literature',
   FILM_TV           = 'Film & TV',
   FOOD_DRINK        = 'Food & Drink',
   GENERAL_KNOWLEDGE = 'General Knowledge',
@@ -11,6 +11,19 @@ export enum TriviaCategory {
   SPORT_LEISURE     = 'Sport & Leisure'
 }
 
+export enum TriviaCategoryAPI {
+  ART_LITERATURE    = 'arts_and_literature',
+  FILM_TV           = 'film_and_tv',
+  FOOD_DRINK        = 'food_and_drink',
+  GENERAL_KNOWLEDGE = 'general_knowledge',
+  GEOGRAPHY         = 'geography',
+  HISTORY           = 'history',
+  MUSIC             = 'music',
+  SCIENCE           = 'science',
+  SCOCIETY_CULTURE  = 'society_and_culture',
+  SPORT_LEISURE     = 'sport_and_leisure'
+}
+
 export enum TriviaDifficulty {
   EASY   = 'easy',
   MEDIUM = 'medium',
@@ -18,7 +31,7 @@ export enum TriviaDifficulty {
 }
 
 export enum TriviaQuestionType {
-  MULTIPLE_CHOICE = 'Multiple Choice'
+  MULTIPLE_CHOICE = 'multiple_choice'
 }
 
 export enum TriviaLimitQuestions {

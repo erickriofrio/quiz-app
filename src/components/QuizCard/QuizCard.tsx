@@ -8,7 +8,7 @@ import { Typography }                         from '@mui/material'
 import { Quizzes, triviaUri }                 from '../../data'
 import { AppContext }                         from '../../context/AppContext'
 // Styles
-import './QuizCard';
+import './QuizCard.css';
 import '../../index.css';
 
 const selectedQuiz = {
@@ -21,7 +21,6 @@ const unselectedQuiz = {
 
 const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
 
-  let quizQuests = [];
   const { currQuiz, setCurrQuiz }   = useContext(AppContext);
   const { questions, setQuestions } = useContext(AppContext);
   
@@ -39,13 +38,13 @@ const QuizCard = ({ quiz }: { quiz: Quizzes }) => {
   const selected: boolean = currQuiz?._id === quiz?._id;
 
   return (
-    <Card style={{ ...(selected ? selectedQuiz : unselectedQuiz) }} onClick={selectQuiz}>
+    <Card className='quiz-card' style={{ ...(selected ? selectedQuiz : unselectedQuiz) }} onClick={selectQuiz}>
       <CardActionArea>
         <CardHeader className='text' title={quiz._id}>
         </CardHeader>
         <CardContent>
           <Typography className='text' gutterBottom variant='h5' component='div'>
-            { `${quizQuests?.length} questions` }
+            { `${quiz.limitQuests} questions` }
           </Typography>
         </CardContent>
         <CardActions>

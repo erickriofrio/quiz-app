@@ -13,6 +13,8 @@ import FormLabel                        from '@mui/material/FormLabel';
 import { AppContext }                   from '../../context/AppContext';
 // Data
 import { QuestionType, Quizzes }        from '../../data';
+// Styles
+import './Question';
 
 
 const Question = ({ idx, question }: { idx: number; question: QuestionType }) => {
@@ -21,16 +23,22 @@ const Question = ({ idx, question }: { idx: number; question: QuestionType }) =>
 
   return (
     <ListItem sx={{ paddingX: '2rem' }}>
-      {/* <ListItemText> */}
-        {/* <span className='text'>{ (idx + 1 + ' - ') + question.question }</span> */}
-      {/* </ListItemText> */}
       <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">
-          <span className='text'>{ (idx + 1 + ' - ') + question.question }</span>
+        <FormLabel>
+          <h3 className='text'>{ (idx + 1 + ' - ') + question.question }</h3>
         </FormLabel>
         <RadioGroup name="radio-buttons-group">
           { shuffle([question.correctAnswer, ...question.incorrectAnswers || []]).map((answer, i) => {
-              return <FormControlLabel className='text' color='#ffffff' key={i} value={answer} control={<Radio />} label={answer} />
+              return <FormControlLabel
+              sx={{
+                ':hover'       : { color: '#1976d2' },
+                '&.Mui-checked': { color: '#1976d2' }
+              }}
+              className='text' color='#ffffff' key={i} value={answer} control={<Radio sx={{
+                color          : '#ffffff',
+                ':hover'       : { color: '#1976d2' },
+                '&.Mui-checked': { color: '#1976d2' }
+              }} className='radio-answers' />} label={answer} />
             })
           }
         </RadioGroup>

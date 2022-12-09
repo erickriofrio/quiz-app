@@ -5,6 +5,8 @@
   align-items: center;
 }
 
-.quiz-card {
-  background-color: #4b5e9e !important;
+.quiz-card { transition: all 330ms ease-in-out !important; }
+.quiz-card:hover { 
+  background-color: #1976d277 !important;
+  transform: scale(1.1); 
 }

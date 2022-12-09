@@ -16,7 +16,7 @@ const QuizList = () => {
     <Card className='QuizList card' sx={{ height: '100%' }}>
       <CardHeader className='text' title={'Quiz List'}></CardHeader>
       <CardContent sx={{ maxHeight: 700, height: '100%', overflow: 'auto' }}>
-        <Grid container  maxWidth={800}>
+        <Grid container maxWidth={800}>
           {QUIZZES.map(quiz => {
             return (
               <Grid key={useId()} item xs={12} sm={12} md={12} lg={6} xl={6} padding={2}>

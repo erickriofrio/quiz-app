@@ -7,7 +7,7 @@ export enum TriviaCategory {
   HISTORY           = 'History',
   MUSIC             = 'Music',
   SCIENCE           = 'Science',
-  SCOCIETY_CULTURE  = 'Society & Culture',
+  SOCIETY_CULTURE   = 'Society & Culture',
   SPORT_LEISURE     = 'Sport & Leisure'
 }
 
@@ -20,7 +20,7 @@ export enum TriviaCategoryAPI {
   HISTORY           = 'history',
   MUSIC             = 'music',
   SCIENCE           = 'science',
-  SCOCIETY_CULTURE  = 'society_and_culture',
+  SOCIETY_CULTURE   = 'society_and_culture',
   SPORT_LEISURE     = 'sport_and_leisure'
 }
 

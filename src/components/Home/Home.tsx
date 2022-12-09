@@ -8,7 +8,7 @@ import QuizList     from '../QuizList/QuizList';
 
 const Home = () => {
   return (
-    <Box marginLeft={0} width={'100%'} sx={{ flexGrow: 1, marginTop: '64px' }}>
+    <Box marginLeft={0} width={'100%'} height={'100%'} sx={{ flexGrow: 1, marginTop: '64px', paddingBottom: 2 }}>
       <Grid container width={'100%'} height={'100%'} spacing={2}>
         <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
           <QuizList></QuizList>
